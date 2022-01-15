@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Text-Based Calculator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+      var error = false;
+var number1=prompt('Welcome To Simplified Calculator!' + 'What number would you like to start with?');
+var action=prompt('What would you like to do with ' + number1 + '? (a=add, m=multiply, s=subtract, d=divide) Please note: it must be a lower-case letter!');
+if (action === 's') {
+  var showaction = 'subtract from ' + number1 + '?'
+} else if (action === 'a') {
+  var showaction = 'add to ' + number1 + '?';
+} else if (action === 'm') {
+  var showaction = 'multiply ' + number1 + ' by?';
+} else if (action === 'd') {
+  var showaction = 'divide ' + number1 + ' by?';
+} else {
+  var error = true;
+  document.write('<p id="calculator">' + "Error-Not an option. Please reload the webpage and specify an existing option." + '</p>')
+} if (action === 'a' || action === 'm' || action === 's' || action === 'd') {
+  number2=prompt('What number would you like to ' + showaction);
+}
+if (action === 's') {
+  var number1 = number1 - number2;
+} else if (action === 'a') {
+  var number1 = Number(number1) + Number(number2);
+} else if (action === 'm') {
+  var number1 = number1 * number2;
+} else if (action === 'd') {
+  var number1 = number1 / number2;
+};
+if (error===false) {
+  document.write('<p id="calculator">' + "Your number is... DRUMROLL PLEASE! " + number1 + "!" + '</p>');
+}
+</script>
+  </body>
+</html>
